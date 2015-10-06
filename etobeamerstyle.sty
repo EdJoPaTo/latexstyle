@@ -1,0 +1,173 @@
+\ProvidesPackage{etobeamerstyle}
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[german]{babel}
+\RequirePackage{helvet}
+
+% Display Notes on second screen
+\usepackage{pgfpages}
+%\setbeameroption{hide notes} % Only slides
+%\setbeameroption{show only notes} % Only notes
+\setbeameroption{show notes on second screen=right} % Both
+
+%
+\RequirePackage{graphicx}
+\RequirePackage{wrapfig}
+% Overlaying Figures
+\RequirePackage{tikz}
+
+
+% Quellcode
+\RequirePackage{listings}
+% \sout{ Text durchstreichen }
+\RequirePackage{ulem}
+%
+\RequirePackage{color}
+% Ausgeben von Dateinamen
+\RequirePackage[parent]{currfile}
+
+\definecolor{darkgreen}{rgb}{0.0,0.5,0.0}
+\definecolor{redstrings}{rgb}{0.64,0.08,0.08}
+
+% Quellcodeformatierung
+\lstset{
+	captionpos=b,
+	frame=l,
+	numbers=left,
+	numberblanklines=true,
+	showstringspaces=false,
+	showtabs=false,
+	showspaces=false,
+	breakatwhitespace=true,
+	tabsize=2,
+	extendedchars=true,
+	breaklines=true,
+	basicstyle=\scriptsize\sffamily,
+	commentstyle=\color{darkgreen},
+	keywordstyle=\color{blue},
+	stringstyle=\color{redstrings},
+	identifierstyle=\color{black},
+%	morekeywords={  abstract, event, new, struct,
+%		        as, explicit, null, switch,
+%		        base, extern, object, this,
+%		        bool, false, operator, throw,
+%		        break, finally, out, true,
+%		        byte, fixed, override, try,
+%		        case, float, params, typeof,
+%		        catch, for, private, uint,
+%		        char, foreach, protected, ulong,
+%		        checked, goto, public, unchecked,
+%		        class, if, readonly, unsafe,
+%		        const, implicit, ref, ushort,
+%		        continue, in, return, using,
+%		        decimal, int, sbyte, virtual,
+%		        default, interface, sealed, volatile,
+%		        delegate, internal, short, void,
+%		        do, is, sizeof, while,
+%		        double, lock, stackalloc,
+%		        else, long, static,
+%		        enum, namespace, string},
+}
+
+% Schriftart ändern
+\renewcommand*\familydefault{\sfdefault}
+\sffamily
+
+\usetheme{Goettingen}
+% disable Bookmarks on bottom right
+\beamertemplatenavigationsymbolsempty
+
+% \setbeamertemplate{note page} % Beamer-Template/-Color/-Font
+% \setbeamertemplate{note page}[default]
+% \setbeamertemplate{note page}[compress]
+% \setbeamertemplate{note page}[plain]
+
+\setbeamertemplate{note page}
+{%
+  {%
+    \scriptsize
+    \usebeamerfont{note title}\usebeamercolor[fg]{note title}%
+    \ifbeamercolorempty[bg]{note title}{}{%
+      \insertvrule{.6\paperheight}{note title.bg}%
+      \vskip-.6\paperheight%
+      \nointerlineskip%
+    }%
+    \vbox{
+      \hfill\insertslideintonotes{0.6}\hskip-\Gm@rmargin\hskip0pt%
+      \vskip-0.4\paperheight%
+      \nointerlineskip
+%      \begin{pgfpicture}{0cm}{0cm}{0cm}{0cm}
+%        \begin{pgflowlevelscope}{\pgftransformrotate{90}}
+%          {\pgftransformshift{\pgfpoint{-2cm}{0.2cm}}%
+          %\pgftext[base,left]{\usebeamerfont{note date}\usebeamercolor[fg]{note date}\the\year-\ifnum\month<10\relax0\fi\the\month-\ifnum\day<10\relax0\fi\the\day}
+%					}
+%        \end{pgflowlevelscope}
+%      \end{pgfpicture}
+		}
+    \nointerlineskip
+    \vbox to .4\paperheight{\vskip-0.15\paperheight
+      \hbox{\hskip-0.05\paperwidth\insertshorttitle[width=8cm]}%
+      \setbox\beamer@tempbox=\hbox{\insertsection}%
+      \hbox{\hskip-0.05\paperwidth\ifdim\wd\beamer@tempbox>1pt{\hskip4pt\raise3pt\hbox{\vrule
+            width0.4pt height7pt\vrule width 9pt
+            height0.4pt}}\hskip1pt\hbox{\begin{minipage}[t]{7.5cm}\def\breakhere{}\insertsection\end{minipage}}\fi%
+      }%
+      \setbox\beamer@tempbox=\hbox{\insertsubsection}%
+      \hbox{\hskip-0.075\paperwidth\ifdim\wd\beamer@tempbox>1pt{\hskip17.4pt\raise3pt\hbox{\vrule
+            width0.4pt height7pt\vrule width 9pt
+            height0.4pt}}\hskip1pt\hbox{\begin{minipage}[t]{7.5cm}\def\breakhere{}\insertsubsection\end{minipage}}\fi%
+      }%
+      \setbox\beamer@tempbox=\hbox{\insertshortframetitle}%
+      \hbox{\hskip-0.10\paperwidth\ifdim\wd\beamer@tempbox>1pt{\hskip30.8pt\raise3pt\hbox{\vrule
+            width0.4pt height7pt\vrule width 9pt
+            height0.4pt}}\hskip1pt\hbox{\insertshortframetitle[width=7cm]}\fi%
+      }%
+      \vfil
+		}%
+  }%
+  \ifbeamercolorempty[bg]{note page}{}{%
+    \nointerlineskip%
+    \insertvrule{.75\paperheight}{note page.bg}%
+    \vskip-.75\paperheight%
+  }%
+  \vskip.25em
+  \nointerlineskip
+  \insertnote
+}
+
+
+% Tabelle: Patz zwischen Zeilen erhöhen
+\renewcommand{\arraystretch}{1.5}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Übersicht}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}
+    \frametitle{Übersicht}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\newcommand\includelargeimage[1]{
+	\begin{minipage}{\linewidth}
+		\centering
+		\vspace*{\baselineskip}
+		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{#1}
+		\vspace{\baselineskip}
+	\end{minipage}
+}
+
+
+\newcommand\mathic{Ma\xout{gic}\textsuperscript{th}}
+
+\newcommand\sideinfo[1]{
+	{ \color{gray} #1 }
+}
