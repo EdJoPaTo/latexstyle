@@ -17,6 +17,8 @@
 \RequirePackage[hidelinks]{hyperref}
 % Quellcode
 \RequirePackage{listings}
+% Mehrseitige Tabellen
+\RequirePackage{longtable}
 %
 \RequirePackage{color}
 % Ausgeben von Dateinamen
@@ -175,6 +177,45 @@
 	\end{titlepage}
 }
 
+
+\newcommand{\changelogname}{Änderungshistorie}
+
+\newenvironment{changelog}
+{
+  \newcommand\changelogitem[4]
+  {
+    ##1 & ##2 & ##3 & ##4 \\
+    \hline
+  }
+
+  \begin{titlepage}
+  \vspace*{-3\baselineskip}
+  \section*{\changelogname}
+  \thispagestyle{indexpage}
+  \vspace*{-1.3\baselineskip}
+
+  \begin{longtable}{ | l | l | l | p{10.2cm} | }
+  %\caption[Short]{Long}
+  %\label{Label} \\
+
+  %\endfirsthead
+
+  \hline
+  \textbf{Version} & \textbf{Author} & \textbf{Datum} & \textbf{Anmerkungen/ Änderungen} \\
+  \hline
+  \endhead
+
+  %\endfoot
+
+  %\endlastfoot
+}
+{
+  \end{longtable}
+  \clearpage
+  \end{titlepage}
+}
+
+
 \newcommand\includewrapimage[2]{
 	\begin{wrapfigure}{r}{0.4\textwidth}
 		\begin{flushright}
@@ -232,4 +273,3 @@
 \newcommand\refto[1]{\autoref{#1}~\refpage{#1}}
 
 \newcommand\reftonamed[1]{\autoref{#1} ''\nameref{#1}''~\refpage{#1}}
-
