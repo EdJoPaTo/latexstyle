@@ -154,6 +154,21 @@
 	\cfoot{\thepage}
 }
 
+\fancypagestyle{simplecontentpage}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{1pt}
+  \rhead{\@author}
+  \lhead{\@title}
+  \renewcommand{\footrulewidth}{1pt}
+  \lfoot{%
+		\ifcurrfile{\parentfilename}{}
+		{\currfilename}% is empty
+		{\parentfilename \ {\scriptsize (includes \currfilename)}}% is not empty
+	}
+  \rfoot{\@date}
+  \cfoot{\thepage}
+}
+
 \pagestyle{contentpage}
 
 \renewcommand*{\maketitle}{
