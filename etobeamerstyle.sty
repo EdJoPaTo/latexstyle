@@ -6,7 +6,7 @@
 \RequirePackage{helvet}
 
 % Display Notes on second screen
-\usepackage{pgfpages}
+\RequirePackage{pgfpages}
 %\setbeameroption{hide notes} % Only slides
 %\setbeameroption{show only notes} % Only notes
 \setbeameroption{show notes on second screen=right} % Both
@@ -78,6 +78,20 @@
 % disable Bookmarks on bottom right
 \beamertemplatenavigationsymbolsempty
 
+\setbeamertemplate{footline}[frame number]
+
+\newenvironment{titleframe}
+{
+	\begin{frame}[plain]
+
+	\advance\textwidth2cm
+	\hsize\textwidth
+	\columnwidth\textwidth
+}
+{
+	\end{frame}
+}
+
 % \setbeamertemplate{note page} % Beamer-Template/-Color/-Font
 % \setbeamertemplate{note page}[default]
 % \setbeamertemplate{note page}[compress]
@@ -140,21 +154,21 @@
 % Tabelle: Patz zwischen Zeilen erhöhen
 \renewcommand{\arraystretch}{1.5}
 
-\AtBeginSection[]
-{
-  \begin{frame}
-    \frametitle{Übersicht}
-    \tableofcontents[currentsection]
-  \end{frame}
-}
-
-\AtBeginSubsection[]
-{
-  \begin{frame}
-    \frametitle{Übersicht}
-    \tableofcontents[currentsection,currentsubsection]
-  \end{frame}
-}
+% \AtBeginSection[]
+% {
+%   \begin{frame}
+%     \frametitle{Übersicht}
+%     \tableofcontents[currentsection]
+%   \end{frame}
+% }
+%
+% \AtBeginSubsection[]
+% {
+%   \begin{frame}
+%     \frametitle{Übersicht}
+%     \tableofcontents[currentsection,currentsubsection]
+%   \end{frame}
+% }
 
 \newcommand\includelargeimage[1]{
 	\begin{minipage}{\linewidth}
@@ -169,5 +183,11 @@
 \newcommand\mathic{Ma\xout{gic}\textsuperscript{th}}
 
 \newcommand\sideinfo[1]{
-	{ \color{gray} #1 }
+	\textcolor{gray}{#1}
+}
+\newcommand\better[1]{
+	\textcolor[RGB]{0,200,0}{#1}
+}
+\newcommand\worse[1]{
+	\textcolor{red}{#1}
 }
