@@ -42,6 +42,9 @@
 \newcommand*{\project}[1]{\gdef\@project{#1}}
 \newcommand*{\@project}{}
 
+\newcommand*{\headerauthor}[1]{\gdef\@headerauthor{#1}}
+\newcommand*{\@headerauthor}{}
+
 \newcommand*{\versionname}[1]{\gdef\@versionname{#1}}
 \newcommand*{\@versionname}{Version}
 
@@ -157,7 +160,7 @@
 \fancypagestyle{indexpage}{
   \fancyhf{}
   \renewcommand{\headrulewidth}{1pt}
-  \rhead{\@project}
+  \rhead{\@headerauthor}
   \lhead{\@title}
   \renewcommand{\footrulewidth}{1pt}
   \lfoot{%
@@ -176,7 +179,7 @@
 \fancypagestyle{simplecontentpage}{
   \fancyhf{}
   \renewcommand{\headrulewidth}{1pt}
-  \rhead{\@author}
+  \rhead{\@headerauthor}
   \lhead{\@title}
   \renewcommand{\footrulewidth}{1pt}
   \lfoot{%
