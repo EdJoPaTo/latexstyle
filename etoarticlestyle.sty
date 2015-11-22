@@ -52,6 +52,16 @@
 \definecolor{redstrings}{rgb}{0.64,0.08,0.08}
 
 % Quellcodeformatierung
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]"
+}
+
 \lstset{
   captionpos=b,
   frame=l,
@@ -67,6 +77,7 @@
   basicstyle=\scriptsize\sffamily,
   commentstyle=\color{darkgreen},
   keywordstyle=\color{blue},
+  ndkeywordstyle=\color{darkblue},
   stringstyle=\color{redstrings},
   identifierstyle=\color{black},
   literate={ö}{{\"o}}1
