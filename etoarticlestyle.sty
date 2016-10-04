@@ -36,6 +36,9 @@
   open
 }
 
+\newcommand*{\authormail}[1]{\gdef\@authormail{#1}}
+\newcommand*{\@authormail}{}
+
 \newcommand*{\company}[1]{\gdef\@company{#1}}
 \newcommand*{\@company}{}
 
@@ -207,6 +210,7 @@
   \textbf{{\Large \@project}}\\
   \vspace{0.3cm}
   {\@author}\\
+  {\@authormail}\\
 
   \vspace*{\stretch{2.0}}
   \end{center}
