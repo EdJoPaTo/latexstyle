@@ -268,6 +268,18 @@
   \end{wrapfigure}
 }
 
+\newcommand\includenamedwrapimage[3]{
+  \begin{wrapfigure}{r}{0.4\textwidth}
+    \begin{flushright}
+      \vspace{-20pt}
+      \includegraphics[width=0.38\textwidth,keepaspectratio]{#1}
+      \caption{#3}
+      \label{fig:#1}
+      \vspace{#2}
+    \end{flushright}
+  \end{wrapfigure}
+}
+
 \newcommand\includecenterimage[1]{
   \begin{minipage}{\linewidth}
     \centering
