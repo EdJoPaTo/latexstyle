@@ -316,6 +316,24 @@
   \end{figure}
 }
 
+\newcommand\includedirectimage[1]{
+  \begin{minipage}{\linewidth}
+    \centering
+    \vspace*{\baselineskip}
+    \includegraphics{#1}
+    \vspace{\baselineskip}
+  \end{minipage}
+}
+
+\newcommand\includenameddirectimage[2]{
+  \begin{figure}[h]
+    \centering
+    \includegraphics{#1}
+    \caption{#2}
+    \label{fig:#1}
+  \end{figure}
+}
+
 \newcommand\refpage[1]{(S.~\pageref{#1})}
 
 \newcommand\refto[1]{\autoref{#1}~\refpage{#1}}
