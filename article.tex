@@ -1,0 +1,37 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{etoarticlestyle}
+
+\company{Fancy GmbH}
+\project{Projekt Superfancy}
+\author{Vergangenheits-Ich}
+\authormail{vergangenheitsich@3t0.de}
+\headerauthor{Vergangenheits-Ich}
+\title{Beispielnutzung vom etoarticlestyle}
+\version{1}
+\date{\today}
+
+\graphicspath{ {./resources/} }
+\input{hyphenation.tex}
+
+\begin{document}
+  \maketitle
+
+  \begin{changelog}
+    \changelogitem{1}{Ich}{04.10.16}{initiale Version}
+  \end{changelog}
+
+  \tableofcontents
+  \clearpage
+
+  \input{articlecontent1.tex}
+  \clearpage
+
+  \section{Anhang}
+%  \listoffigures
+%  \listoftables
+%  \lstlistoflistings
+%  \clearpage
+  \input{quellen.tex}
+
+\end{document}
