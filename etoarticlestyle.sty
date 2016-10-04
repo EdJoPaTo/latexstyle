@@ -290,15 +290,12 @@
 }
 
 \newcommand\includenamedcenterimage[2]{
-  \begin{minipage}{\linewidth}
-    \captionsetup{type=figure}
+  \begin{figure}[h]
     \centering
-    \vspace*{\baselineskip}
     \includegraphics[width=0.7\textwidth]{#1}
     \caption{#2}
     \label{fig:#1}
-    \vspace{\baselineskip}
-  \end{minipage}
+  \end{figure}
 }
 
 \newcommand\includelargeimage[1]{
@@ -311,15 +308,12 @@
 }
 
 \newcommand\includenamedlargeimage[2]{
-  \begin{minipage}{\linewidth}
-    \captionsetup{type=figure}
+  \begin{figure}[h]
     \centering
-    \vspace*{\baselineskip}
     \includegraphics[width=\textwidth]{#1}
     \caption{#2}
     \label{fig:#1}
-    \vspace{\baselineskip}
-  \end{minipage}
+  \end{figure}
 }
 
 \newcommand\refpage[1]{(S.~\pageref{#1})}
