@@ -280,39 +280,21 @@
   \end{wrapfigure}
 }
 
-\newcommand\includecenterimage[1]{
+\newcommand\includeimage[2][]{
   \begin{minipage}{\linewidth}
     \centering
     \vspace*{\baselineskip}
-    \includegraphics[width=0.7\textwidth]{#1}
+    \includegraphics[width=#1\textwidth]{#2}
     \vspace{\baselineskip}
   \end{minipage}
 }
 
-\newcommand\includenamedcenterimage[2]{
-  \begin{figure}[h]
+\newcommand\includenamedimage[3][]{
+  \begin{figure}
     \centering
-    \includegraphics[width=0.7\textwidth]{#1}
-    \caption{#2}
-    \label{fig:#1}
-  \end{figure}
-}
-
-\newcommand\includelargeimage[1]{
-  \begin{minipage}{\linewidth}
-    \centering
-    \vspace*{\baselineskip}
-    \includegraphics[width=\textwidth]{#1}
-    \vspace{\baselineskip}
-  \end{minipage}
-}
-
-\newcommand\includenamedlargeimage[2]{
-  \begin{figure}[h]
-    \centering
-    \includegraphics[width=\textwidth]{#1}
-    \caption{#2}
-    \label{fig:#1}
+    \includegraphics[width=#1\textwidth]{#2}
+    \caption{#3}
+    \label{fig:#2}
   \end{figure}
 }
 
