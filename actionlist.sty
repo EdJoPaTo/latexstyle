@@ -8,33 +8,33 @@
 
 \newenvironment{actionlist}[1][1] % Parameteranzahl: 1, default für Parameter 1: 1
 {
-  \setcounter{actionitem}{#1}
-  \addtocounter{actionitem}{-1}
+	\setcounter{actionitem}{#1}
+	\addtocounter{actionitem}{-1}
 
-  \newcommand\actionitem[5]
-  {
-    \refstepcounter{actionitem}\label{actionitem:\theactionitem}
-    \hfill \theactionitem & ##1 & ##2 & ##3 & ##4 & ##5 \\
-    \hline
-  }
+	\newcommand\actionitem[5]
+	{
+		\refstepcounter{actionitem}\label{actionitem:\theactionitem}
+		\hfill \theactionitem & ##1 & ##2 & ##3 & ##4 & ##5 \\
+		\hline
+	}
 
-  \vspace*{-1.3\baselineskip}
+	\vspace*{-1.3\baselineskip}
 
-  \begin{longtable}{ | p{1.1cm} | p{0.8cm} | p{7.9cm} | p{1.2cm} | l | p{1.3cm} | }
-  %\caption[Short]{Long}
-  %\label{Label} \\
+	\begin{longtable}{ | p{1.1cm} | p{0.8cm} | p{7.9cm} | p{1.2cm} | l | p{1.3cm} | }
+	%\caption[Short]{Long}
+	%\label{Label} \\
 
-  %\endfirsthead
+	%\endfirsthead
 
-  \hline
-  \textbf{Nr} & \textbf{Typ} & \textbf{Stichwort und Beschreibung} & \textbf{Wer} & \textbf{Termin} & \textbf{Status} \\
-  \hline
-  \endhead
+	\hline
+	\textbf{Nr} & \textbf{Typ} & \textbf{Stichwort und Beschreibung} & \textbf{Wer} & \textbf{Termin} & \textbf{Status} \\
+	\hline
+	\endhead
 
-  %\endfoot
+	%\endfoot
 
-  %\endlastfoot
+	%\endlastfoot
 }
 {
-  \end{longtable}
+	\end{longtable}
 }
