@@ -170,15 +170,12 @@
 %   \end{frame}
 % }
 
-\newcommand\includelargeimage[1]{
+\newcommand\includeimage[2][0.8]{
 	\begin{minipage}{\linewidth}
 		\centering
-		\vspace*{\baselineskip}
-		\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{#1}
-		\vspace{\baselineskip}
+		\includegraphics[height=#1\textheight,width=\textwidth,keepaspectratio]{#2}
 	\end{minipage}
 }
-
 
 \newcommand\mathic{Ma\xout{gic}\textsuperscript{th}}
 
